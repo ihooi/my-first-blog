@@ -6,14 +6,13 @@
     <div>
       <h1><a href="">Django Girl's Blog</a></h1>
     </div>
-    <div>
-      <p>published: 14. 06. 2014, 12:14</p>
-      <h2><a href="">My first post</a></h2>
-      <p> akdflajl dlfl dljfldjlj dljfldjf djfdjlajdfljlfajl dfljdlfjldfl  djfldjlfjlsdjaljfldjflj ldjfljdljflalsjdhewopjcvlv</p>
-    </div>
-    <div>
-      <p>published: 14. 07. 2014, 12:14</p>
-      <h2><a href="">My second post</a></h2>
-      <p> akd dgpa[ gpdjpfpp pdpfpapdf  ppd pppp ewhfha[[ djfpjj]]] </p>
+
+    {% for post in posts %}
+      <div>
+        <p>publshed: {{ post.created_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaks }}</p>
+      </div>
+    {% endfor %}
   </body>
 </html>
